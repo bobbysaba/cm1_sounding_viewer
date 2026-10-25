@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cm1-sounding-editor"
+version = "0.1.0"
+description = "View, diagnose, and edit CM1 input_sounding files"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "PyQt6>=6.4", "pyqtgraph>=0.13.3"]
+
+[project.optional-dependencies]
+test = ["pytest", "metpy>=1.5"]
+
+[project.scripts]
+cm1-sounding-editor = "sounding_editor.app:main"
+
+[tool.setuptools]
+packages = ["sounding_editor"]
+
+[tool.setuptools.package-data]
+sounding_editor = ["assets/*.svg"]
